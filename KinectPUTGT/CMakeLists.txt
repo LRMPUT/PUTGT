@@ -7,7 +7,6 @@ endif()
 
 find_package( OpenCV REQUIRED )
 
-include_directories(${Boost_INCLUDE_DIRS})
 
 add_executable( Kinectv1GT main.cpp )
 target_link_libraries( Kinectv1GT ${OpenCV_LIBS}) 
