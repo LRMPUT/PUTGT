@@ -35,13 +35,15 @@ int main()
 
 			// Wait for instructions
 			char c = cv::waitKey(1);
-			if ( c == 'c') break;
+			if ( c == 'c' || c == 27) break;
 			if ( c == 'q'){
 				running = false;
 				break;			
 			};
 		}
 		
+		if (!running)
+			break;
 
 		// Save to file
 		char nazwa[30];

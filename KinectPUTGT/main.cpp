@@ -166,13 +166,18 @@ int main(int argc, char* argv[]) {
 
 		// Checking if we didn't miss any synchronization packets
 		recvStr = string(recvbuf);
-		recvStr = recvStr.substr(6, n-8);
-		if (n > 0)
-			printf("Received number: %s, expected %d\n", recvStr.c_str(), i);
+		string x = recvStr.substr(0, n);
+		std::cout<<"RECV: " << x <<std::endl;
 
 		// We got the stop
 		if (recvStr.find('X') != string::npos)
 			break;
+
+		// Finding "_"
+		recvStr = recvStr.substr(6, n-8);
+		if (n > 0)
+			printf("Received number: %s, expected %d\n", recvStr.c_str(), i);
+
 
 		// Creating new MATs
 		dMap[i % CYCLIC_BUFFER_SIZE] = Mat();
@@ -193,6 +198,8 @@ int main(int argc, char* argv[]) {
 		i++;
 
 	}
+	// Close sockets
+	close(sockfd);
 
 	// Release camera and w8 for save
 	experiment_end = true;
