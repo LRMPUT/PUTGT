@@ -1,0 +1,6 @@
+Hej, 
+Ad. 1) Tak, pozycja znacznika w uk³adzie kamery
+Ad. 2) Pozycje kamer wzglêdem znacznika. Pierwsza linijka to stary kinect (00022000 w camdata), druga to nowy kinect (00033000).
+Pozdrawiam,
+Adam
+
